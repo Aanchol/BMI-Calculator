@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF303F9F);
+
 class InputPage extends StatelessWidget {
   const InputPage({Key? key}) : super(key: key);
 
@@ -15,64 +18,63 @@ class InputPage extends StatelessWidget {
         leading: Icon(Icons.menu_outlined),
         backgroundColor: Colors.indigo[900],
       ),
-      body: SafeArea(
-        child: Column(
+      body:
+         Column(
           children: [
             Expanded(
               child: Row(
-
                 children: [
-                  Column(
-                    children: [
                       Expanded(
-                        child: ReusableCard(color: Colors.indigo[700],),
+                        child: ReusableCard(color: activeCardColor),
                       ),
                       Expanded(
-                        child: ReusableCard(color: Colors.indigo[700],),
+                        child: ReusableCard(color: activeCardColor),
                       ),
                     ],
-                  ),
 
-
-                ],
               ),
             ),
             Expanded(
               child: Row(
 
-                children: [
-                  Column(
+
                     children: [
                       Expanded(
-                        child: ReusableCard(color: Colors.indigo[700],),
+                        child: ReusableCard(color: activeCardColor),
                       ),
                     ],
-                  ),
-                ],
+
+
               ),
             ),
             Expanded(
               child: Row(
 
-                children: [
-                  Column(
+
                     children: [
                       Expanded(
-                        child: ReusableCard(color: Colors.indigo[700],),
+                        child: ReusableCard(color: activeCardColor),
                       ),
                       Expanded(
-                        child: ReusableCard(color: Colors.indigo[700],),
+                        child: ReusableCard(color: activeCardColor),
                       ),
                     ],
-                  ),
 
 
-                ],
+
+
               ),
+            ),
+            Container(
+              color: Colors.pink,
+              margin: const EdgeInsets.only(top: 14),
+              height: bottomContainerHeight,
             ),
           ],
         ),
-      ),
+
+
+
     );
   }
 }
@@ -80,15 +82,16 @@ class InputPage extends StatelessWidget {
 class ReusableCard extends StatelessWidget {
 
   final  Color? color;
-  ReusableCard({this.color});
+   ReusableCard({@required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(4),
         color: color,
+
       ),
     );
   }

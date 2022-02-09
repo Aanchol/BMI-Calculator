@@ -14,7 +14,7 @@ class BmiCalculatorApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BMI Calculator',
-      theme: ThemeData.dark(),
+      //theme: ThemeData.dark(),
       home: InputPage(),
     );
   }
