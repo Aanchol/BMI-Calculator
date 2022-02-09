@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'Pages/input_page.dart';
+
 void main() {
-  runApp(const BmiCalculatorApp());
+  runApp(BmiCalculatorApp());
 }
 
 class BmiCalculatorApp extends StatelessWidget {
@@ -12,67 +14,9 @@ class BmiCalculatorApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BMI Calculator',
-      home: Scaffold(
-        backgroundColor: Colors.indigo[900],
-        appBar: AppBar(
-          title: Center(
-            child: Text('BMI CALCULATOR'),
-          ),
-          leading: Icon(Icons.dehaze_rounded),
-          backgroundColor: Colors.indigo[900],
-        ),
-        body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                children: [
-                  Container(
-                    height: 175.0,
-                    width: 175,
-                    color: Colors.indigo[700],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Column(
-                children: [
-                  Container(
-                    height: 175.0,
-                    width: 175,
-                    color: Colors.indigo[700],
-                    child: Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                          children: [
-                            Icon(
-                              Icons.female,
-                              color: Colors.white,
-                              size: 100.0,
-                            ),
-                            Text(
-                              "Male",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      theme: ThemeData.dark(),
+      home: InputPage(),
     );
   }
 }
+
